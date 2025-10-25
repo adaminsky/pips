@@ -1,6 +1,6 @@
 # PIPS: Per-Instance Program Synthesis
 
-Per-Instance Program Synthesis (PIPS) is an adaptive reasoning baseline that decides, for every problem instance, whether to run deliberate chain-of-thought reasoning or synthesize executable Python code. It wraps modern LLM APIs in a feedback-driven loop with automatic execution, streaming telemetry, and a polished web interface so you can deploy it as a baseline or extend it for your own applications.
+Per-Instance Program Synthesis (PIPS) is an adaptive reasoning baseline that decides, for every problem instance, whether to run deliberate chain-of-thought reasoning or synthesize executable Python code.
 
 ## Why try PIPS?
 - Adaptive per-instance strategy selection that balances executable program synthesis with fast chain-of-thought reasoning.
