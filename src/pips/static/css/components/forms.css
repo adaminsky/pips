@@ -1,0 +1,283 @@
+/* Form Components */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-800);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+}
+
+.form-help {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 6px;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+.form-help-inline {
+    font-size: 12px;
+    color: var(--gray-400);
+    font-weight: 400;
+    margin-left: 8px;
+}
+
+#questionInput {
+    width: 100%;
+    min-height: 140px;
+    padding: 20px;
+    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    font-size: 15px;
+    resize: vertical;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    background: white;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#questionInput:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+#questionInput:disabled {
+    background-color: var(--gray-50);
+    color: var(--gray-500);
+    cursor: not-allowed;
+    border-color: var(--gray-200);
+}
+
+#questionInput::placeholder {
+    color: var(--gray-400);
+    font-style: italic;
+}
+
+/* Custom Rules Input - Match Problem Description styling */
+.custom-rules-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 16px 20px;
+    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    font-size: 14px;
+    resize: vertical;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    background: white;
+    line-height: 1.5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.custom-rules-input:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.custom-rules-input::placeholder {
+    color: var(--gray-400);
+    font-style: italic;
+}
+
+/* iOS-style Switch */
+.ios-switch-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ios-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ios-switch-input {
+    display: none;
+}
+
+.ios-switch-label {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 44px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ios-switch-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 22px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ios-switch-slider::before {
+    content: '';
+    position: absolute;
+    height: 36px;
+    width: 96px;
+    left: 4px;
+    background: white;
+    border-radius: 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.ios-switch-input:checked + .ios-switch-label .ios-switch-slider {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.ios-switch-input:checked + .ios-switch-label .ios-switch-slider::before {
+    transform: translateX(96px);
+}
+
+.ios-switch-text {
+    position: relative;
+    z-index: 1;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 36px;
+}
+
+.ios-switch-text-left {
+    margin-left: 8px;
+}
+
+.ios-switch-text-right {
+    margin-right: 8px;
+}
+
+.ios-switch-input:checked + .ios-switch-label .ios-switch-text-left {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ios-switch-input:not(:checked) + .ios-switch-label .ios-switch-text-right {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mode-description {
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray-600);
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Consistent with .form-label */
+    font-weight: 500;
+    color: var(--gray-700);
+    font-size: 14px;
+}
+
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px rgb(14 165 233 / 0.1);
+}
+
+.switch-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--gray-300);
+    transition: .3s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+input:checked + .slider {
+    background-color: var(--primary-500);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.method-label {
+    font-weight: 500;
+    color: var(--gray-700);
+    font-family: 'Poppins', 'Inter', sans-serif;
+} 

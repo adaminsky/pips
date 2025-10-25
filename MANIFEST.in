@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include requirements.txt
+recursive-include src/pips/templates *
+recursive-include src/pips/static *.css *.js *.json *.html
+recursive-include src/pips/static/default_sessions *.json
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store 
