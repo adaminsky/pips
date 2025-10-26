@@ -1,6 +1,15 @@
-# PIPS: Per-Instance Program Synthesis
+<h1 align="center">PIPS: Per-Instance Program Synthesis</h1>
+
+<p align="center">
+  <img src="assets/pips_overview.png" width="800">
+</p>
 
 Per-Instance Program Synthesis (PIPS) is an adaptive reasoning baseline that decides, for every problem instance, whether to run deliberate chain-of-thought reasoning or synthesize executable Python code.
+
+## News
+
+- **[10/26/2025]** Code for PIPS as well as web interface and gradio app are released.
+- **[9/18/2025]** PIPS accepted to NeurIPS 2025!
 
 ## Why try PIPS?
 - Adaptive per-instance strategy selection that balances executable program synthesis with fast chain-of-thought reasoning.
