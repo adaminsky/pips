@@ -9,7 +9,8 @@ description = "Per-Instance Program Synthesis (PIPS) - An adaptive reasoning bas
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "PIPS Development Team", email = "contact@example.com"}
+    {name = "Adam Stein", email = "steinad@seas.upenn.edu"},
+    {name = "Neelay Velingker", email = "neelay@seas.upenn.edu"},
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -61,10 +62,10 @@ all = [
 pips = "pips.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/example/pips"
-Repository = "https://github.com/example/pips"
-Issues = "https://github.com/example/pips/issues"
-Documentation = "https://github.com/example/pips#readme"
+Homepage = "https://github.com/adaminsky/pips"
+Repository = "https://github.com/adaminsky/pips"
+Issues = "https://github.com/adaminsky/pips/issues"
+Documentation = "https://github.com/adaminsky/pips#readme"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pips"]

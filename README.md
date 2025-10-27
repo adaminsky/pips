@@ -5,7 +5,9 @@
 </p>
 
 <div align="center">
+<a href="https://huggingface.co/spaces/steinad/PIPS-demo">
 <img alt="Static Badge" src="https://img.shields.io/badge/Demo-PIPS-blue?style=flat&logo=huggingface&link=https%3A%2F%2Fhuggingface.co%2Fspaces%2Fsteinad%2FPIPS-demo">
+</a>
 <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-yellow?style=flat&link=https%3A%2F%2Fopensource.org%2Flicenses%2FMIT">
 </div>
 
@@ -43,18 +45,6 @@ export GOOGLE_API_KEY="..."
 ```
 Only one key is required to get started.
 
-## Run the baseline web app
-```bash
-pips --host 127.0.0.1 --port 5000
-# or
-python -m pips
-```
-The browser UI exposes:
-- Guided problem submission with optional image inputs.
-- Live reasoning and code execution streams.
-- Session history with import/export so you can benchmark or share runs.
-- On-the-fly model, temperature, and iteration controls.
-
 ## Use PIPS from Python
 ```python
 from pips import PIPSSolver, get_model
@@ -67,15 +57,29 @@ problem = RawInput(text_input="What is the sum of the first 10 prime numbers?")
 answer, telemetry, mode_decision = solver.solve(problem, stream=False)
 print("Answer:", answer)
 ```
-Set `stream=True` and pass callbacks such as `on_llm_streaming_token` or `on_step_update` to receive incremental updates. For complete control you can call `solve_with_code` or `solve_chain_of_thought` directly, and the same callbacks work for both.
+Set `stream=True` and pass callbacks such as `on_llm_streaming_token` or
+`on_step_update` to receive incremental updates. For complete control you can
+call `solve_with_code` or `solve_chain_of_thought` directly, and the same
+callbacks work for both.
+
+## Run the Gradio App
+We also provide a Gradio web app which can be used to interactively experiment
+with PIPS from the browser. To run the app, run the following:
+```bash
+python src/pips/gradio_app.py
+```
+
+The web app provides an interface for entering API keys through the browser, so
+they do not need to be configured beforehand.
 
 ## Supported providers
-- **OpenAI**: GPT-4o, GPT-4o-mini, GPT-4-turbo, GPT-3.5-turbo, o1-preview, o1-mini, o3-mini (when available).
-- **Anthropic**: Claude 3.5 Sonnet, Claude 3 Opus/Sonnet/Haiku, Claude 2.0/2.1.
-- **Google**: Gemini 2.0 Flash (experimental), Gemini 1.5 Pro/Flash, Gemini 1.0 Pro.
+PIPS supports any OpenAI, Anthropic, or Google model through their API
+endpoints. Models hosted with VLLM are also supported.
 
 ## Sessions and exports
-Per-Instance Program Synthesis stores runs in browser local storage, shipping with curated examples on first launch. You can export or import sessions as JSON files—handy for sharing baselines or reproducing papers.
+Per-Instance Program Synthesis stores runs in browser local storage, shipping
+with curated examples on first launch. You can export or import sessions as
+JSON files—handy for sharing baselines or reproducing papers.
 
 ## License
 MIT
