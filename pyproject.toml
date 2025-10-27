@@ -28,23 +28,18 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 keywords = ["llm", "code-generation", "ai", "problem-solving", "iterative"]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
     "openai>=1.0.0",
     "anthropic>=0.7.0",
-    "google-genai>=0.2.0",
-    "flask>=2.0.0",
-    "flask-socketio>=5.0.0",
+    "google-genai",
     "pillow>=8.0.0",
     "timeout-decorator>=0.5.0",
-    "python-socketio[client]>=5.0.0",
 ]
 
 [project.optional-dependencies]
-web = [
-    "flask>=2.0.0",
-    "flask-socketio>=5.0.0",
-    "python-socketio[client]>=5.0.0",
+gradio = [
+    "gradio",
 ]
 dev = [
     "pytest>=6.0.0",
@@ -55,11 +50,21 @@ dev = [
     "isort>=5.0.0",
 ]
 all = [
-    "pips-solver[web,dev]"
+    "pips-solver[gradio,dev]"
 ]
 
-[project.scripts]
-pips = "pips.__main__:main"
+[dependency-groups]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "isort>=5.0.0",
+]
+gradio = [
+    "gradio",
+]
 
 [project.urls]
 Homepage = "https://github.com/adaminsky/pips"

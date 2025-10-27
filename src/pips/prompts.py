@@ -1,9 +1,9 @@
 """
-Prompt templates used by the PIPS web application.
+Prompt templates used by the PIPS solver and interactive interfaces.
 
 These definitions mirror the variants maintained in ``scripts/algorithmic_eval.py``
-so that the web server can operate when the broader research repository is not
-installed as a Python package.
+so that applications embedding the solver can operate when the broader research
+repository is not installed as a Python package.
 """
 
 CHOOSE_CONSERVATIVE_COT_VS_CODE_PROMPT = """

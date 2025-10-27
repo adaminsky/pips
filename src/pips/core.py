@@ -596,7 +596,7 @@ Make sure to follow these formatting requirements exactly.
                     "callbacks": callbacks
                 }
                 
-                # Return control to web_app - it will call continue_from_checkpoint
+                # Pause here; external caller can resume by invoking continue_from_checkpoint
                 return "", logs
 
             # ask model to improve

@@ -11,8 +11,4 @@ from .core import PIPSSolver, PIPSMode
 from .models import get_model
 from .model_registry import register_model
 
-try:
-    from .web_app import run_app
-    __all__ = ["PIPSSolver", "PIPSMode", "get_model", "register_model", "run_app"]
-except ImportError:
-    __all__ = ["PIPSSolver", "PIPSMode", "get_model", "register_model"] 
+__all__ = ["PIPSSolver", "PIPSMode", "get_model", "register_model"]

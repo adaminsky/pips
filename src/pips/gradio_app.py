@@ -1,10 +1,9 @@
 """
 Gradio interface for the PIPS solver.
 
-This module provides a lightweight alternative to the Socket.IO web
-application defined in :mod:`pips.web_app`.  It exposes a Gradio Blocks
-layout that lets users supply API keys (kept in Gradio state), paste a
-problem description, and optionally upload an image.  The back-end uses
+This module provides a lightweight browser interface built with Gradio. It
+exposes a Blocks layout that lets users supply API keys (kept in Gradio state),
+paste a problem description, and optionally upload an image.  The back-end uses
 ``PIPSSolver.solve`` so that the same automatic mode selection between
 chain-of-thought and iterative coding is applied.
 """
@@ -29,7 +28,7 @@ try:
 except ImportError as exc:  # pragma: no cover - handled at runtime
     raise ImportError(
         "Gradio is required to run the PIPS Gradio app. "
-        "Install it via `pip install gradio`."
+        "Install it via `uv sync --group gradio`."
     ) from exc
 
 from pathlib import Path

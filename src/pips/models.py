@@ -405,7 +405,7 @@ class GoogleModel(LLMModel):
         """Initialize Google client based on provider type."""
         if self.provider == "google-genai":
             if not genai:
-                raise ImportError("google-genai library not installed. Install with: pip install google-genai")
+                raise ImportError("google-genai library not installed. Install by running `uv sync` with the appropriate extras.")
             self._client = genai.Client(api_key=self.api_key, http_options=types.HttpOptions(timeout=60*1000))
         else:
             # Use OpenAI-compatible API endpoint
@@ -643,7 +643,7 @@ class AnthropicModel(LLMModel):
             raise ValueError("Anthropic API key not provided and ANTHROPIC_API_KEY environment variable not set")
         
         if not anthropic:
-            raise ImportError("anthropic library not installed. Install with: pip install anthropic")
+            raise ImportError("anthropic library not installed. Install by running `uv sync` with the appropriate extras.")
     
     def _initialize_client(self):
         """Initialize Anthropic client."""

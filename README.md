@@ -16,25 +16,29 @@ Per-Instance Program Synthesis (PIPS) is an adaptive reasoning baseline that dec
 
 ## News
 
-- **[10/26/2025]** Code for PIPS as well as web interface and gradio app are released.
+- **[10/26/2025]** Code for PIPS as well as a Gradio demo are released.
 - **[09/18/2025]** PIPS accepted to NeurIPS 2025!
 
 ## Why try PIPS?
 - Adaptive per-instance strategy selection that balances executable program synthesis with fast chain-of-thought reasoning.
-- Iterative code refinement with automatic execution, error recovery, and optional interactive checkpoints.
-- Real-time observability via structured logs, token streaming, and persisted sessions that make debugging or research comparisons easy.
-- Drop-in baseline: run the web app with one command or import a single class to embed Per-Instance Program Synthesis inside your stack.
+- Iterative code refinement with automatic execution, error recovery, and optional interactive callbacks.
+- Works out-of-the-box as a Python library and ships with a lightweight Gradio UI for quick exploration.
+- Drop-in baseline: import a single class to embed Per-Instance Program Synthesis inside your stack.
 
-## Install
+## Install with uv
 ```bash
 git clone <repository-url>
 cd PIPS
-pip install -e .
-
-# Optional extras
-pip install -e .[web]   # UI dependencies
-pip install -e .[dev]   # linting & tests
+uv venv
+source .venv/bin/activate
+uv sync --editable .
 ```
+
+To include optional dependencies:
+- `uv sync --group gradio` enables the browser UI.
+- `uv sync --group dev` installs linting and test tooling.
+
+Install multiple groups at once with `uv sync --group gradio --group dev`.
 
 ## Configure providers
 Export whichever API keys you plan to use:
@@ -56,6 +60,9 @@ solver = PIPSSolver(model=model, max_iterations=8, temperature=0.0)
 problem = RawInput(text_input="What is the sum of the first 10 prime numbers?")
 answer, telemetry, mode_decision = solver.solve(problem, stream=False)
 print("Answer:", answer)
+
+# Inspect the selected mode
+print("Mode:", "code" if mode_decision["use_code"] else "chain-of-thought")
 ```
 Set `stream=True` and pass callbacks such as `on_llm_streaming_token` or
 `on_step_update` to receive incremental updates. For complete control you can
@@ -63,23 +70,22 @@ call `solve_with_code` or `solve_chain_of_thought` directly, and the same
 callbacks work for both.
 
 ## Run the Gradio App
-We also provide a Gradio web app which can be used to interactively experiment
-with PIPS from the browser. To run the app, run the following:
+Install the Gradio extra and launch the browser experience:
 ```bash
-python src/pips/gradio_app.py
+uv sync --group gradio
+uv run python -m pips.gradio_app
 ```
-
-The web app provides an interface for entering API keys through the browser, so
-they do not need to be configured beforehand.
 
 ## Supported providers
 PIPS supports any OpenAI, Anthropic, or Google model through their API
 endpoints. Models hosted with VLLM are also supported.
 
-## Sessions and exports
-Per-Instance Program Synthesis stores runs in browser local storage, shipping
-with curated examples on first launch. You can export or import sessions as
-JSON files—handy for sharing baselines or reproducing papers.
+## Development and tests
+Install dev tooling and run the test suite:
+```bash
+uv sync --group dev
+uv run pytest
+```
 
 ## License
 MIT
