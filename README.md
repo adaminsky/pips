@@ -5,9 +5,8 @@
 </p>
 
 <div align="center">
-<a href="https://huggingface.co/spaces/steinad/PIPS-demo">
-<img alt="Static Badge" src="https://img.shields.io/badge/Demo-PIPS-blue?style=flat&logo=huggingface&link=https%3A%2F%2Fhuggingface.co%2Fspaces%2Fsteinad%2FPIPS-demo">
-</a>
+<a href="https://arxiv.org/abs/2510.22849"><img alt="Static Badge" src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=white"></a>
+<a href="https://huggingface.co/spaces/steinad/PIPS-demo"><img alt="Static Badge" src="https://img.shields.io/badge/Demo-PIPS-blue?style=flat&logo=huggingface&link=https%3A%2F%2Fhuggingface.co%2Fspaces%2Fsteinad%2FPIPS-demo"></a>
 <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-yellow?style=flat&link=https%3A%2F%2Fopensource.org%2Flicenses%2FMIT">
 </div>
 
